@@ -7,12 +7,13 @@
 html, body{
     height: 100vh;
     width: 100vw;
+    background-color: var(--color-bg);
 }
 
 .navbar{
     width: 100%;
     height: 85px;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     justify-content: space-between;
 }
@@ -92,8 +93,8 @@ html, body{
 
 .navbar .middle{
     height: 100%;
-    width: 40%;
-    background-color: blue;
+    width: 42%;
+    /* background-color: blue; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,18 +105,82 @@ html, body{
 .navbar .middle .homeButton{
     width: 60px;
     height: 60px;
-    background-color: yellow;
+    /* background-color: yellow; */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+#home-btn{
+    width: 50px;
+    height: 50px;
+    color: white;
+}
+
 .navbar .middle .searchBar{
-    width: 88%;
+    width: 89%;
     height: 60px;
-    background-color: yellow;
+    background-color: var(--color-surface);
     border-radius: 50px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .middle .searchBar .searchIcon{
+    height: 55px;
+    width: 55px;
+    /* background-color: blue; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-icon{
+    width: 40px;
+    height: 40px;
+}
+
+.navbar .middle .searchBar .search{
+    width: 75%;
+    height: 55px;
+    /* background-color: blue; */
+    border: none;
+}
+
+.navbar .middle .searchBar .explore{
+    width: 14%;
+    height: 55px;
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: var(--padding-sm);
+}
+
+.navbar .middle .searchBar .explore .line{
+    height: 95%;
+    width: 5px;
+    background-color: white;
+    /* padding-left: var(--padding-sm); */
+}
+
+.navbar .middle .searchBar .explore .icon{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#explore-btn{
+    width: 36px;
+    height: 36px;
 }
 
 .navbar .right{
