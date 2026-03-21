@@ -1,190 +1,271 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: var(--color-bg);
+  font-family: var(--font);
 }
 
-html, body{
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--color-bg);
+.navbar {
+  width: 100%;
+  height: 85px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
 }
 
-.navbar{
-    width: 100%;
-    height: 85px;
-    /* background-color: red; */
-    display: flex;
-    justify-content: space-between;
+.navbar .left {
+  height: 100%;
+  width: 15%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: var(--padding-sm);
+  padding-right: var(--padding-2xl);
 }
 
-.navbar .left{
-    height: 100%;
-    width: 15%;
-    /* background-color: blue; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: var(--padding-sm);
-    padding-right: var(--padding-2xl);
+.navbar .left .brandLogo {
+  height: 60px;
+  width: 60px;
+  background-color: grey;
+  border-radius: 50%;
 }
 
-.navbar .left .brandLogo{
+.navbar .left .navigate {
+  width: 30%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar .left .navigate .previous {
+  width: 60px;
+  height: 60px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar .left .navigate .next {
+  width: 60px;
+  height: 60px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#prev-btn {
+  color: var(--color-text-secondary);
+  height: 45px;
+  width: 45px;
+  color: var(--color-text-secondary);
+  transition: transform 0.3s ease-in-out;
+}
+
+#prev-btn:hover {
+  color: var(--color-text);
+  cursor: pointer;
+  transform: scale(1.08);
+}
+
+#next-btn {
+  color: white;
+  height: 45px;
+  width: 45px;
+  color: var(--color-text-secondary);
+  transition: transform 0.3s ease-in-out;
+}
+
+#next-btn:hover {
+  color: var(--color-text);
+  cursor: pointer;
+  transform: scale(1.08);
+}
+
+.navbar .middle {
+  height: 100%;
+  width: 42%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: var(--padding-2xl);
+  padding-right: var(--padding-2xl);
+}
+
+.navbar .middle .homeButton {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-surface);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-btn {
+  width: 40px;
+  height: 40px;
+  color: var(--color-text);
+}
+
+.navbar .middle .searchBar {
+  width: 89%;
+  height: 60px;
+  background-color: var(--color-surface);
+  border-radius: 50px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .middle .searchBar .searchIcon {
+  height: 55px;
+  width: 55px;
+  /* background-color: blue; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#search-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--color-text-secondary);
+}
+
+.navbar .middle .searchBar .search {
+  width: 75%;
+  height: 55px;
+  /* background-color: blue; */
+  border: none;
+  background-color: transparent;
+  /* background-color: var(--color-surface); */
+  user-select: none;
+  outline: none;
+  color: var(--color-text);
+  font-size: 22px;
+}
+
+.navbar .middle .searchBar .explore {
+  width: 14%;
+  height: 55px;
+  /* background-color: black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: var(--padding-md);
+  padding-right: var(--padding-md);
+}
+
+.navbar .middle .searchBar .explore .line {
+  height: 36px;
+  width: 1px;
+  background-color: var(--color-text-secondary);
+  /* padding-left: var(--padding-sm); */
+}
+
+.navbar .middle .searchBar .explore .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#explore-btn {
+  width: 40px;
+  height: 40px;
+  color: var(--color-text-secondary);
+}
+
+.navbar .right {
+  height: 100%;
+  width: 15%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: var(--padding-sm);
+  padding-left: var(--padding-2xl);
+  gap: var(--gutter-md);
+}
+
+.navbar .right .theme{
+    width: 140px;
     height: 60px;
-    width: 60px;
-    background-color: grey;
-    border-radius: 50%;
-}
-
-.navbar .left .navigate{
-    width: 30%;
-    height: 100%;
-    /* background-color: yellow; */
+    /* background-color: yellow ; */
+    border-radius: 60px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    /* gap: var(--gutter-sm); */
+    border: 2px solid var(--color-text);
+    background-color: var(--color-text);
 }
 
-.navbar .left .navigate .previous{
-    width: 60px;
-    height: 60px;
-    /* background-color: red; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.navbar .left .navigate .next{
-    width: 60px;
-    height: 60px;
-    /* background-color: red; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-#prev-btn{
-    color: var(--color-text-secondary);
-    height: 45px;
-    width: 45px;
-    color: var(--color-text-secondary);
-    transition: transform 0.3s ease-in-out;
-}
-
-#prev-btn:hover{
-    color: var(--color-text);
-    cursor: pointer;
-    transform: scale(1.08);
-}
-
-#next-btn{
-    color: white;
-    height: 45px;
-    width: 45px;
-    color: var(--color-text-secondary);
-    transition: transform 0.3s ease-in-out;
-}
-
-#next-btn:hover{
-    color: var(--color-text);
-    cursor: pointer;
-    transform: scale(1.08);
-}
-
-.navbar .middle{
-    height: 100%;
-    width: 42%;
-    /* background-color: blue; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: var(--padding-2xl);
-    padding-right: var(--padding-2xl);
-}
-
-.navbar .middle .homeButton{
-    width: 60px;
-    height: 60px;
-    /* background-color: yellow; */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#home-btn{
+.navbar .right .theme .themeIcon{
     width: 50px;
     height: 50px;
-    color: white;
-}
-
-.navbar .middle .searchBar{
-    width: 89%;
-    height: 60px;
-    background-color: var(--color-surface);
-    border-radius: 50px;
-    border: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar .middle .searchBar .searchIcon{
-    height: 55px;
-    width: 55px;
-    /* background-color: blue; */
+    /* background-color: brown; */
     border-radius: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-left: 2px;
 }
 
-#search-icon{
+#theme-icon{
     width: 40px;
     height: 40px;
+    fill: var(--color-text-tertiary);
 }
 
-.navbar .middle .searchBar .search{
-    width: 75%;
-    height: 55px;
-    /* background-color: blue; */
-    border: none;
-}
-
-.navbar .middle .searchBar .explore{
-    width: 14%;
-    height: 55px;
-    /* background-color: black; */
+.navbar .right .theme .themeName{
+    width: 80px;
+    height: 40px;
+    /* background-color: brown; */
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-right: var(--padding-sm);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-2xl);
 }
 
-.navbar .middle .searchBar .explore .line{
-    height: 95%;
-    width: 5px;
-    background-color: white;
-    /* padding-left: var(--padding-sm); */
-}
-
-.navbar .middle .searchBar .explore .icon{
-    width: 55px;
-    height: 55px;
+.navbar .right .profile{
+    width: 60px;
+    height: 60px;
+    /* background-color: yellow; */
     border-radius: 50%;
-    /* background-color: blue; */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--color-surface);
 }
 
-#explore-btn{
-    width: 36px;
-    height: 36px;
+.navbar .right .profile .picture{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    /* background-color: red; */
 }
 
-.navbar .right{
+.navbar .right .profile .picture img{
+    width: 100%;
     height: 100%;
-    width: 15%;
-    /* background-color: blue; */
+    object-fit: cover;
+    border-radius: 50%;
 }
