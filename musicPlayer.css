@@ -184,8 +184,6 @@
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 
-    border-radius: 999px;
-
     box-shadow:
         0 2px 6px rgba(0, 0, 0, 0.5),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -238,21 +236,84 @@
 .musicFunctions {
     width: 27%;
     height: 95%;
-    background-color: blue;
+    /* background-color: blue; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: var(--gutter-md);
+    gap: var(--gutter-sm);
 }
 
 .musicFunctions .m {
-    width: 40px;
-    height: 40px;
-    background-color: orange;
+    width: 35px;
+    height: 35px;
+    /* background-color: orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.musicFunctions .m .function-icon{
+    width: 25px;
+    height: 25px;
+    color: var(--color-text-secondary);
+    transition: all 0.15s ease-in-out;
+}
+
+.musicFunctions .m:hover .function-icon{
+    color: var(--color-text);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.musicFunctions .like .function-icon{
+    color: var(--color-primary);
+    fill: var(--color-primary);
+}
+
+.musicFunctions .like .function-icon{
+    transition: all 0.15s ease-in-out;
+}
+
+.musicFunctions .like:hover .function-icon{
+    color: var(--color-primary);
+    fill: var(--color-primary);
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .musicFunctions .volumeSlider {
     width: 125px;
-    height: 40px;
-    background-color: orange;
+    height: 8px;
+    background-color: var(--color-text-secondary);
+    border-radius: var(--border-radius-2xl);
+    background: var(--color-surface);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #eaeaea;
+
+    transition: all 0.2s ease;
+}
+
+.musicFunctions .volumeSlider .currentVolume{
+    width: 80%;
+    height: 100%;
+    background-color: var(--color-text);
+    border-radius: var(--border-radius-2xl);
+    transition: all 0.2s ease;
+}
+
+.musicFunctions .volumeSlider:hover{
+    cursor: pointer;
+}
+
+.musicFunctions .volumeSlider:hover .currentVolume{
+    background-color: var(--color-primary);
 }
