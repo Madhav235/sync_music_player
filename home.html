@@ -91,7 +91,13 @@
                     <div class="top">
                         <div class="yourLibrary">Your Library</div>
                         <div class="create">
-                            <div class="createIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" id="add-btn" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg></div>
+                            <div class="createIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" id="add-btn" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-plus-icon lucide-plus">
+                                    <path d="M5 12h14" />
+                                    <path d="M12 5v14" />
+                                </svg></div>
                             <div class="createText">Create</div>
                         </div>
                     </div>
@@ -105,15 +111,22 @@
                 <div class="playlistBody">
                     <div class="playlistNavigate">
                         <div class="playlistSearch"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" id="search-icon-playlist" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-search-icon lucide-search">
-                            <path d="m21 21-4.34-4.34" />
-                            <circle cx="11" cy="11" r="8" />
-                        </svg></div>
+                                viewBox="0 0 24 24" fill="none" id="search-icon-playlist" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-search-icon lucide-search">
+                                <path d="m21 21-4.34-4.34" />
+                                <circle cx="11" cy="11" r="8" />
+                            </svg></div>
                         <div class="playlistRecents">
                             <div class="recentText">Recents</div>
-                            <div class="recentIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" id="playlistRecent-btn" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg></div>
+                            <div class="recentIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" id="playlistRecent-btn" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="lucide lucide-menu-icon lucide-menu">
+                                    <path d="M4 5h16" />
+                                    <path d="M4 12h16" />
+                                    <path d="M4 19h16" />
+                                </svg></div>
                         </div>
                     </div>
                     <div class="playlistItem">
@@ -139,14 +152,35 @@
             </div>
             <div class="mainPlayer">
                 <div class="songFunctions">
-                    <div class="previous"></div>
-                    <div class="play"></div>
-                    <div class="next"></div>
+                    <div class="previous nav"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="navigate-btn lucide lucide-skip-back-icon lucide-skip-back">
+                            <path
+                                d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
+                            <path d="M3 20V4" />
+                        </svg></div>
+                    <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" id="play-btn" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-play-icon lucide-play">
+                            <path
+                                d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+                        </svg></div>
+                    <div class="next nav"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="navigate-btn lucide lucide-skip-forward-icon lucide-skip-forward">
+                            <path d="M21 4v16" />
+                            <path
+                                d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z" />
+                        </svg></div>
                 </div>
                 <div class="songTimeline">
-                    <div class="currentTime"></div>
-                    <div class="timelineSlider"></div>
-                    <div class="totalTime"></div>
+                    <div class="currentTime time">2:03</div>
+                    <div class="timelineSlider">
+                        <div class="progressBar"></div>
+                    </div>
+                    <div class="totalTime time">2:54</div>
                 </div>
             </div>
             <div class="musicFunctions">
