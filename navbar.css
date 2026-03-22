@@ -106,7 +106,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(30, 30, 30, 0.6);
+    background: var(--color-surface);
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -151,7 +151,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(30, 30, 30, 0.6);
+    background: var(--color-surface);
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -265,7 +265,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: var(--gutter-sm);
-    background: rgba(30, 30, 30, 0.6);
+    background: var(--color-surface);
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);

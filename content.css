@@ -1,85 +1,270 @@
-.content{
+.content {
     width: 100%;
     height: calc(100vh - 85px);
-    background-color: red;
+    /* background-color: red; */
+    /* background: var(--color-surface);;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.04),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.6);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: var(--color-surface);
+    padding: 10px 16px;
+    transition: all 0.25s ease; */
 }
 
-.playlist{
+.playlist {
     width: 25%;
-    height: calc(100vh - 170px);
-    background-color: blue;
+    height: calc(100vh - 180px);
+    background-color: black;
+    background: var(--color-surface);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-left: var(--padding-sm);
+
+    /* box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.04),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.6);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: var(--color-surface);
+    padding: 10px 16px;
+    transition: all 0.25s ease; */
+    background: var(--color-surface);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.04),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.6);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: var(--color-surface);
+    padding: 10px 16px;
+    transition: all 0.25s ease;
 }
 
-.playlist .playlistHead{
+.playlist .playlistHead {
     width: 100%;
     height: 15%;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-bottom: 4px;
 }
 
-.playlist .playlistHead .top{
+.playlist .playlistHead .top {
     width: 100%;
     height: 49.5%;
-    background-color: brown;
+    /* background-color: brown; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: var(--padding-sm);
+    padding-left: var(--padding-md);
     padding-right: var(--padding-md);
 }
 
-.playlist .playlistHead .top .yourLibrary{
+.playlist .playlistHead .top .yourLibrary {
     width: 35%;
     height: 90%;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-family: var(--font);
     font-size: 24px;
     color: var(--color-text);
+    margin-top: var(--padding-sm);
 }
 
-.playlist .playlistHead .top .create{
-    width: 35%;
-    height: 90%;
+.playlist .playlistHead .top .create {
+    width: 32%;
+    height: 72%;
     border-radius: 50px;
-    background-color: aqua;
+    /* background-color: aqua; */
+    background-color: var(--color-surface);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: var(--padding-sm);
+    background: var(--color-surface);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    padding: 6px 12px;
+
+    color: #eaeaea;
+
+    transition: all 0.2s ease;
 }
 
-.playlist .playlistHead .top .create .createIcon{
-    width: 25%;
+.playlist .playlistHead .top .create .createIcon {
+    width: 40%;
     height: 100%;
-    background-color: black;
+    /* background-color: black; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#add-btn{
-    height: 40px;
-    width: 40px;
+#add-btn {
+    height: 24px;
+    width: 24px;
     color: white;
 }
 
-.playlist .playlistHead .top .create .createText{
-    width: 74%;
+.playlist .playlistHead .top .create .createText {
+    width: 60%;
     height: 100%;
-    background-color: purple;
+    /* background-color: purple; */
     color: var(--color-text);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+}
+
+.playlist .playlistHead .bottom {
+    width: 100%;
+    height: 49.5%;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-left: var(--padding-sm);
+    padding-right: var(--padding-sm);
+}
+
+.pb {
+    width: 23%;
+    height: 72%;
+    /* background-color: aqua; */
+    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 22px;
+    color: var(--color-text);
+    font-size: 17px;
+    /* background-color: red; */
+    background: var(--color-surface);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    padding: 6px 12px;
+
+    color: #eaeaea;
+
+    transition: all 0.2s ease;
 }
 
-.playlist .playlistHead .bottom{
+.playlist .playlistBody {
     width: 100%;
-    height: 49.5%;
-    background-color: brown;
+    height: 85%;
+    /* background-color: red; */
+}
+
+.playlist .playlistBody .playlistNavigate {
+    width: 100%;
+    height: 8%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlist .playlistBody .playlistNavigate .playlistSearch {
+    width: 20%;
+    height: 90%;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: var(--padding-md);
+}
+
+#search-icon-playlist {
+    width: 28px;
+    height: 28px;
+    color: var(--color-text-secondary);
+}
+
+.playlist .playlistBody .playlistNavigate .playlistRecents {
+    width: 40%;
+    height: 90%;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: var(--padding-md);
+}
+
+.playlist .playlistBody .playlistNavigate .playlistRecents .recentText {
+    width: 50%;
+    height: 100%;
+    /* background-color: black; */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-family: var(--font);
+    font-size: 20px;
+    color: var(--color-text);
+}
+
+.playlist .playlistBody .playlistNavigate .playlistRecents .recentIcon {
+    width: 30%;
+    height: 100%;
+    /* background-color: black; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#playlistRecent-btn {
+    width: 30px;
+    height: 30px;
+    color: var(--color-text-secondary);
+}
+
+.playlist .playlistBody .playlistItem {
+    width: 100%;
+    height: 12%;
+    /* background-color: yellow; */
 }
