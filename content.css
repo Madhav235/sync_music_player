@@ -1,6 +1,6 @@
 .content {
     width: 100%;
-    height: calc(100vh - 85px);
+    height: calc(100vh - 185px);
     /* background-color: red; */
     /* background: var(--color-surface);;
 
@@ -23,7 +23,7 @@
 
 .playlist {
     width: 25%;
-    height: calc(100vh - 180px);
+    height: 100%;
     background-color: black;
     background: var(--color-surface);
 
