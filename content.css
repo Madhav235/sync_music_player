@@ -23,7 +23,7 @@
 
 .playlist {
     width: 25%;
-    height: 100%;
+    height: calc(100vh - 197px);
     background-color: black;
     background: var(--color-surface);
 
