@@ -64,20 +64,6 @@ A modern music player built using JavaScript and external APIs, inspired by Spot
 
 ---
 
-## Project Structure
-
-```id="gk92ms"
-/src
-  /components
-  /services
-  /utils
-index.html
-style.css
-app.js
-```
-
----
-
 ## Future Improvements
 
 * Playlist creation
