@@ -1,0 +1,85 @@
+.mainPanel {
+    flex: 1;
+    width: 100%;
+    height: calc(100vh - 202px);
+    background-color: red;
+    background: var(--color-surface);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: 30px;
+    margin-top: 5px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.04),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.6);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: var(--color-surface);
+    padding-left: var(--padding-2xl);
+    padding-right: var(--padding-2xl);
+    transition: all 0.25s ease;
+}
+
+.mainPanel .userName{
+    width: 90%;
+    height: 10%;
+    /* background-color: red; */
+    font-family: var(--font);
+    color: var(--color-text);
+    font-size: 35px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 800;
+}
+
+.mainPanel .panelItem{
+    width: 100%;
+    height: 38%;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mainPanel .panelItem .itemName{
+    width: 90%;
+    height: 18%;
+    background-color: aqua;
+}
+
+.mainPanel .panelItem .itemPlaylist{
+    width: 100%;
+    height: 67.5%;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainPanel .panelItem .itemPlaylist .playlistBlock{
+    height: 95%;
+    aspect-ratio: 1;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mainPanel .panelItem .itemPlaylistDescription{
+    width: 100%;
+    height: 14%;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainPanel .panelItem .itemPlaylistDescription .playlistBlockDescription{
+    width: 16.8%;
+    height: 100%;
+    background-color: yellow;
+}
