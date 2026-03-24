@@ -24,7 +24,7 @@
     transition: all 0.25s ease;
 }
 
-.mainPanel .userName{
+.mainPanel .userName {
     width: 90%;
     height: 10%;
     /* background-color: red; */
@@ -37,49 +37,170 @@
     font-weight: 800;
 }
 
-.mainPanel .panelItem{
+.mainPanel .quickSuggestion{
+    width: 100%;
+    height: 20%;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainPanel .quickSuggestion .suggestTop{
+    width: 100%;
+    height: 49.5%;
+    background-color: yellow;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.mainPanel .quickSuggestion .suggestTop .commonItem{
+    width: 25%;
+    height: 80%;
+    background-color: aqua;
+    border-radius: var(--border-radius-xl);
+    background: var(--color-surface);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #eaeaea;
+
+    transition: all 0.2s ease;
+}
+
+.mainPanel .quickSuggestion .suggestTop .commonItem .suggestCover{
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: red;
+    border-radius: var(--border-radius-xl);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background: var(--color-surface);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.04),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.6);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: var(--color-surface);
+    transition: all 0.25s ease;
+}
+
+.mainPanel .quickSuggestion .suggestTop .commonItem .suggestCover .suggestCoverImg{
+    width: 85%;
+    height: 85%;
+    /* background-color: violet; */
+     border-radius: var(--border-radius-xl);
+}
+
+.mainPanel .quickSuggestion .suggestBottom{
+    width: 100%;
+    height: 49.5%;
+    background-color: yellow;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.mainPanel .quickSuggestion .suggestBottom .commonItem{
+    width: 25%;
+    height: 80%;
+    background-color: aqua;
+    border-radius: var(--border-radius-xl);
+}
+
+.mainPanel .panelItem {
     width: 100%;
     height: 38%;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.mainPanel .panelItem .itemName{
+.mainPanel .panelItem .itemName {
     width: 90%;
     height: 18%;
-    background-color: aqua;
+    /* background-color: aqua; */
+    font-family: var(--font);
+    font-size: 20px;
+    color: var(--color-text);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 700;
 }
 
-.mainPanel .panelItem .itemPlaylist{
+.mainPanel .panelItem .itemPlaylist {
     width: 100%;
     height: 67.5%;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.mainPanel .panelItem .itemPlaylist .playlistBlock{
+.mainPanel .panelItem .itemPlaylist .playlistBlock {
     height: 95%;
     aspect-ratio: 1;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-sm);
+    background: var(--color-surface);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    border-radius: var(--border-radius-2xl);
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #eaeaea;
+
+    transition: all 0.2s ease;
 }
 
-.mainPanel .panelItem .itemPlaylistDescription{
+.mainPanel .panelItem .itemPlaylist .playlistBlock .blockCover{
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    border-radius: var(--border-radius-2xl);
+}
+
+.mainPanel .panelItem .itemPlaylistDescription {
     width: 100%;
     height: 14%;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
 }
 
-.mainPanel .panelItem .itemPlaylistDescription .playlistBlockDescription{
+.mainPanel .panelItem .itemPlaylistDescription .playlistBlockDescription {
     width: 16.8%;
     height: 100%;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
