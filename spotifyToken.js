@@ -15,7 +15,7 @@ export async function getSpotifyToken() {
     headers: {
       Authorization:
         "Basic " + btoa(SPOTIFY_CLIENT_ID + ":" + SPOTIFY_CLIENT_SECRET),
-      "Content-Type": "application/x-www-form-urlencoded"
+        "Content-Type": "application/x-www-form-urlencoded"
     },
     body: new URLSearchParams({
       grant_type: "client_credentials"
@@ -30,7 +30,7 @@ export async function getSpotifyToken() {
   return accessToken;
 }
 
-async function api() {
+export async function api() {
     let ACCESS_TOKEN = await getSpotifyToken();
     console.log(ACCESS_TOKEN)
 }

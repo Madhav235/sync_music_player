@@ -171,6 +171,14 @@
     transition: all 0.25s ease;
 }
 
+.navbar .middle .searchBar.searchBarActive{
+    background: var(--color-surface), 0.4;
+    transform: scale(1.01);
+    cursor: pointer;
+    border: solid white 2px;
+    transition: all 0.2s ease;
+}
+
 .navbar .middle .searchBar:hover {
     background: var(--color-surface), 0.4;
     transform: scale(1.01);

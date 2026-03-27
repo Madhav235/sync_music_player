@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="CSS Files/searchModal.css">
     <link rel="stylesheet" href="CSS Files/queue.css">
     <link rel="stylesheet" href="CSS Files/content.css">
     <link rel="stylesheet" href="CSS Files/mainPanel.css">
@@ -52,7 +53,7 @@
                             <path d="m21 21-4.34-4.34" />
                             <circle cx="11" cy="11" r="8" />
                         </svg></div>
-                    <input class="search" placeholder="What do you want to play?mm"></input>
+                    <input id="searchInput" class="search" placeholder="What do you want to play?mm"></input>
                     <div class="explore">
                         <div class="line"></div>
                         <div class="icon">
@@ -328,7 +329,28 @@
         </div>
 
     </section>
-     <script type="module" src="spotifyToken.js"></script>
+    <div id = "searchModal" class="search-Modal searchModalActive">
+        <div class="searchModalItem">
+            <div class="songCover">
+                <div class="songCoverLayout">
+                    <img src="/assets/sampleSongCover.jpg">
+                </div>
+            </div>
+            <div class="songInformation">
+                <div class="songName">Shape of You</div>
+                <div class="songArtist">Ed Sheeran</div>
+            </div>
+        </div>
+         <div class="searchModalItem">
+            <div class="songCover"></div>
+            <div class="songInformation">
+                <div class="songName">Shape of You</div>
+                <div class="songArtist">Ed Sheeran</div>
+            </div>
+        </div>
+    </div>
+    <script type="module"src="home.js"></script>
+    <script type="module" src="spotifyToken.js"></script>
 </body>
 
 </html>

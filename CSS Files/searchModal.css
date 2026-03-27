@@ -1,0 +1,128 @@
+.search-Modal.searchModalActive{
+    width: 33%;
+    height: 470px;
+    background-color: yellow;
+    position: fixed;
+    top: 85px;
+    left: 52%;
+    translate: -50%;
+    background: var(--color-surface);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.04),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.6);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: var(--color-surface);
+    padding: 10px 16px;
+    transition: all 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-sm);
+}
+
+.search-Modal.searchModalActive .searchModalItem{
+    width: 100%;
+    height: 20%;
+    background-color: red;
+    border-radius: 25px;
+    background: var(--color-surface);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #eaeaea;
+
+    transition: all 0.2s ease;
+    padding: 8px 15px;
+    display: flex;
+    gap: var(--gutter-md);
+}
+
+.search-Modal.searchModalActive .songCover{
+    height: 100%;
+    aspect-ratio: 1;
+    background-color: yellow;
+     background: var(--color-surface);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border-radius: var(--border-radius-lg);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.04),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.6);
+
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: var(--color-surface);
+    transition: all 0.25s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-Modal.searchModalActive .songCover .songCoverLayout{
+    width: 86%;
+    height: 86%;
+    border-radius: var(--border-radius-lg);
+    background-color: red;
+}
+
+.search-Modal.searchModalActive .songCover .songCoverLayout img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-lg);
+    object-position: bottom;
+}
+
+.search-Modal.searchModalActive .songInformation{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.search-Modal.searchModalActive .songInformation .songName{
+    width: 100%;
+    height: 60%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-family: var(--font);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.search-Modal.searchModalActive .songInformation .songArtist{
+    width: 100%;
+    height: 39.5%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: var(--font);
+    color: var(--color-text-secondary);
+}
