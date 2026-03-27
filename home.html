@@ -46,7 +46,7 @@
                     </svg>
                 </div>
                 <div class="searchBar">
-                    <div class="searchIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    <div id="jsSearchIcon" class="searchIcon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" id="search-icon" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-search-icon lucide-search">
@@ -329,26 +329,7 @@
         </div>
 
     </section>
-    <div id = "searchModal" class="search-Modal searchModalActive">
-        <div class="searchModalItem">
-            <div class="songCover">
-                <div class="songCoverLayout">
-                    <img src="/assets/sampleSongCover.jpg">
-                </div>
-            </div>
-            <div class="songInformation">
-                <div class="songName">Shape of You</div>
-                <div class="songArtist">Ed Sheeran</div>
-            </div>
-        </div>
-         <div class="searchModalItem">
-            <div class="songCover"></div>
-            <div class="songInformation">
-                <div class="songName">Shape of You</div>
-                <div class="songArtist">Ed Sheeran</div>
-            </div>
-        </div>
-    </div>
+    <div id = "jsSearchModal" class="search-Modal"></div>
     <script type="module"src="home.js"></script>
     <script type="module" src="spotifyToken.js"></script>
 </body>
