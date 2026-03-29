@@ -134,6 +134,12 @@
     color: var(--color-text);
 }
 
+#pause-btn{
+    width: 25px;
+    height: 25px;
+    color: var(--color-text);
+}
+
 .mainPlayer .songFunctions .play:hover{
     transform: scale(1.05);
     cursor: pointer;
@@ -316,4 +322,8 @@
 
 .musicFunctions .volumeSlider:hover .currentVolume{
     background-color: var(--color-primary);
+}
+
+#jsYoutubeAudioPlayer{
+    /* position: absolute; */
 }

@@ -1,6 +1,6 @@
 console.log("music player functionality code loaded");
 
-import { YOUTUBE_API_KEY} from "./config";  
+import { YOUTUBE_API_KEY } from "./config.js";
 
 async function searchYouTube(query) {
     console.log("New")
@@ -17,18 +17,18 @@ async function searchYouTube(query) {
     }
 }
 
-
-async function playSongOnPLayer(name, artist) {
+export async function playSongOnPLayer(name, artist) {
     console.log(`${name} ${artist}`);
 
     // Access Video Id
 
-    let videoId = await accessVideoIdFromYoutube(name, artist);
-    console.log(videoId);
-    console.log("I ran first");
+    // let videoId = await accessVideoIdFromYoutube(name, artist);
+    // console.log(videoId);
+    // console.log("I ran first");
 
     // Sending accessed video ID to the iframe
-    let status = sendingAcessIdToIframe(videoId);
+
+    let status = sendingAcessIdToIframe();
     if (status == "VideoId Invalid") {
         console.log("VideoId Invalid")
     }
@@ -54,15 +54,102 @@ async function accessVideoIdFromYoutube(songName, songArtist) {
     return videoId
 }
 
-function sendingAcessIdToIframe(videoId) {
+function sendingAcessIdToIframe(videoId="hM2U8cb8lhI") {
+    if (!videoId) return;
 
-    console.log(`Inside sending access ${videoId}`);
+    const player = window.YTPlayerState.getPlayer();
 
-    if (!videoId) {
-        console.log("Invalid video ID");
-        return ("Video Id Invalid");
+    if (window.YTPlayerState.isReady()) {
+        player.loadVideoById(videoId);
+    } else {
+        console.log("Player not ready, storing video");
+        window.YTPlayerState.setPending(videoId);
+    }
+}
+
+// Music player controls implementation
+
+// Play and pause Functionality
+
+const playButton = document.querySelector("#jsPlayButton");
+
+let stateChanged = function (state) {
+    console.log("state changed")
+    console.log(state);
+    console.log("State change function triggered");
+
+    if (state === 2 || state === 0) {
+        playButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor" id="play-btn" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play">
+                            <path
+                                d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+                        </svg>`
+
+        stopTimeTracking();
+    } else if(state === 1 || state === 3) {
+        playButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" id="pause-btn" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause-icon lucide-pause"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>`
+        startTimeTracking();
+    }
+}
+
+let tracking = null;
+
+function startTimeTracking(){
+    console.log("Time track started")
+    console.log("Tracking ID:", tracking);
+    tracking = setInterval(() => {
+        let currentTime = player.getCurrentTime();
+        let totalDuration = player.getDuration();
+        // console.log(`${currentTime} / ${totalDuration}`);
+        let [totalMinute, totalSeconds] = formatInMinuteSeconds(totalDuration);
+        updateProgressTime(currentTime,totalMinute,totalSeconds);
+    },1000);
+}
+
+function stopTimeTracking(){
+    console.log("Clearing Track interval");
+    clearInterval(tracking);
+}
+
+function updateProgressTime(current, totalMinute,totalSeconds){
+    const currentTime = document.querySelector("#jsCurrentTime");
+    const totalDuration = document.querySelector("jsTotalDuration");
+
+    let [currentMinute, currentSeconds] = formatInMinuteSeconds(current);
+
+    // console.log(`${currentMinute}:${currentSeconds}/${totalMinute}:${totalSeconds}`);
+
+    if(currentSeconds < 10){
+        console.log("less")
+        currentTime.innerHTML = `${currentMinute}:0${currentSeconds}`;
+    }else{
+        currentTime.innerHTML = `${currentMinute}:${currentSeconds}`;
+        totalDuration.innerHTML = `${totalMinute}:${totalSeconds}`;
+    }
+}
+
+function formatInMinuteSeconds(time){
+    let minutes = Math.floor(time/60);
+    let seconds = Math.floor(time%60);
+    // console.log(minutes,seconds)
+    return [minutes,seconds]
+}
+
+window.stateChanged = stateChanged;
+
+playButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (!window.YTPlayerState || !window.YTPlayerState.isReady()) {
+        console.log("Player is not ready yet");
+        return;
     }
 
-    const iframe = document.querySelector("#jsYoutubeAudioPlayer");
-    iframe.setAttribute("src", `https://www.youtube.com/embed/${videoId}?autoplay=1`);
-}
+    let playerState = player.getPlayerState();
+
+    if (playerState === 1) {
+        player.pauseVideo()
+    } else {
+        player.playVideo();
+    }
+})

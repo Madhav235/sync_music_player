@@ -263,7 +263,7 @@
                 </div>
             </div>
             <div class="mainPlayer">
-                <iframe id="jsYoutubeAudioPlayer" width="560" height="315" src="https://www.youtube.com/embed/08WiUcJmnZc?si=mCmIWMDPQT5u3XTP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             <div id="jsYoutubeAudioPlayer"></div>
                 <div class="songFunctions">
                     <div class="previous nav"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
@@ -273,7 +273,7 @@
                                 d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
                             <path d="M3 20V4" />
                         </svg></div>
-                    <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <div id="jsPlayButton" class="play"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="currentColor" id="play-btn" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play">
                             <path
@@ -289,8 +289,8 @@
                         </svg></div>
                 </div>
                 <div class="songTimeline">
-                    <div class="currentTime time">2:03</div>
-                    <div class="timelineSlider">
+                    <div id="jsCurrentTime" class="currentTime time">2:03</div>
+                    <div id="jsTotalDuration" class="timelineSlider">
                         <div class="progressBar"></div>
                     </div>
                     <div class="totalTime time">2:54</div>
@@ -337,7 +337,8 @@
 
     </section>
     <div id="jsSearchModal" class="search-Modal"></div>
-    <script src="home1.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="youtubePlayer.js"></script>
     <script type="module" src="home.js"></script>
     <script type="module" src="spotifyToken.js"></script>
 </body>
