@@ -145,6 +145,7 @@ searchIcon.addEventListener("click",(e) => {
                 console.log(e);
                 console.log(idx);
                 showUserSelectedSong(songs.songCover,songs.songName,songs.songArtist);
+                playSongOnPLayer(songs.songName,songs.songArtist)
             })
         });
     })
