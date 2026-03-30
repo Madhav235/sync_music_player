@@ -253,18 +253,39 @@
                 <div class="likedSongsHeader">
                     <div class="likedSongsIcon">
                         <div class="likedSongsIconSource">
-                             <img src="/assets/likedIcon.png">
+                            <img src="/assets/likedIcon.png">
                         </div>
                     </div>
                     <div class="likedSongsInfo">
                         <div class="title">Liked Songs</div>
                         <div class="likeInfo">
-                             <div class="likeProfile">
+                            <div class="likeProfile">
                                 <div class="likeProfileSource">
-                                     <img src="/assets/profilePicture.jpeg">
+                                    <img src="/assets/profilePicture.jpeg">
                                 </div>
-                        </div><div class="likedUser">Madhav</div>
-                    <div class="likedSongsCount"><span>&bull; 0</span> songs</div></div>
+                            </div>
+                            <div class="likedUser">Madhav</div>
+                            <div class="likedSongsCount"><span>&bull; 0</span> songs</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="likedSongsContainer">
+                    <div class="likedSongItem">
+                        <div class="serialNumber">1.</div>
+                        <div class="likedSongCover">
+                            <div class="likedSongCoverLayout">
+                                <img src="./assets/sampleSongCover.jpg">
+                            </div>
+                        </div>
+                        <div class="likedSongDescription">
+                            <div class="likedSongInfo">
+                                <div class="likedSongName">Brutal</div>
+                                <div class="likedSongArtist">Olivia Rodrigo</div>
+                            </div>
+                            <div class="likedSongAlbum">SOUR</div>
+                            <div class="likedSongDateAdded">10 Feb 2026</div>
+                            <div class="likedSongDuration">2:54</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,7 +304,7 @@
                 </div>
             </div>
             <div class="mainPlayer">
-             <div id="jsYoutubeAudioPlayer"></div>
+                <div id="jsYoutubeAudioPlayer"></div>
                 <div class="songFunctions">
                     <div class="previous nav"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2"
@@ -293,8 +314,8 @@
                                 d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z" />
                             <path d="M3 20V4" />
                         </svg></div>
-                    <div id="jsPlayButton" class="play"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="currentColor" id="play-btn" stroke="currentColor" stroke-width="2"
+                    <div id="jsPlayButton" class="play"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="currentColor" id="play-btn" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play">
                             <path
                                 d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
@@ -311,14 +332,14 @@
                 <div class="songTimeline">
                     <div id="jsCurrentTime" class="currentTime time">2:03</div>
                     <div id="jsTimelineSlider" class="timelineSlider">
-                        <div id= "jsSongProgress" class="progressBar"></div>
+                        <div id="jsSongProgress" class="progressBar"></div>
                     </div>
                     <div id="jsTotalDuration" class="totalTime time">2:54</div>
                 </div>
             </div>
             <div class="musicFunctions">
-                <div id="jsLikeButton" class="like m"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                <div id="jsLikeButton" class="like m"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="function-icon lucide lucide-heart-icon lucide-heart">
                         <path
                             d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
@@ -363,4 +384,5 @@
     <script type="module" src="home.js"></script>
     <script type="module" src="spotifyToken.js"></script>
 </body>
+
 </html>
