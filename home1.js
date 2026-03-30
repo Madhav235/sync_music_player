@@ -54,7 +54,7 @@ async function accessVideoIdFromYoutube(songName, songArtist) {
     return videoId
 }
 
-function sendingAcessIdToIframe(videoId="hM2U8cb8lhI") {
+function sendingAcessIdToIframe(videoId = "hM2U8cb8lhI") {
     if (!videoId) return;
 
     const player = window.YTPlayerState.getPlayer();
@@ -69,16 +69,12 @@ function sendingAcessIdToIframe(videoId="hM2U8cb8lhI") {
 
 // Music player controls implementation
 
-// Play and pause Functionality
-
-const playButton = document.querySelector("#jsPlayButton");
-
 let stateChanged = function (state) {
     console.log("state changed")
     console.log(state);
     console.log("State change function triggered");
 
-    if (state === 2 || state === 0) {
+    if (state === 2) {
         playButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="currentColor" id="play-btn" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play-icon lucide-play">
@@ -87,56 +83,20 @@ let stateChanged = function (state) {
                         </svg>`
 
         stopTimeTracking();
-    } else if(state === 1 || state === 3) {
+        clearProgressInterval();
+    } else if (state === 1 || state === 3) {
         playButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" id="pause-btn" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause-icon lucide-pause"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>`
         startTimeTracking();
-    }
-}
-
-let tracking = null;
-
-function startTimeTracking(){
-    console.log("Time track started")
-    console.log("Tracking ID:", tracking);
-    tracking = setInterval(() => {
-        let currentTime = player.getCurrentTime();
         let totalDuration = player.getDuration();
-        // console.log(`${currentTime} / ${totalDuration}`);
-        let [totalMinute, totalSeconds] = formatInMinuteSeconds(totalDuration);
-        updateProgressTime(currentTime,totalMinute,totalSeconds);
-    },1000);
-}
-
-function stopTimeTracking(){
-    console.log("Clearing Track interval");
-    clearInterval(tracking);
-}
-
-function updateProgressTime(current, totalMinute,totalSeconds){
-    const currentTime = document.querySelector("#jsCurrentTime");
-    const totalDuration = document.querySelector("jsTotalDuration");
-
-    let [currentMinute, currentSeconds] = formatInMinuteSeconds(current);
-
-    // console.log(`${currentMinute}:${currentSeconds}/${totalMinute}:${totalSeconds}`);
-
-    if(currentSeconds < 10){
-        console.log("less")
-        currentTime.innerHTML = `${currentMinute}:0${currentSeconds}`;
-    }else{
-        currentTime.innerHTML = `${currentMinute}:${currentSeconds}`;
-        totalDuration.innerHTML = `${totalMinute}:${totalSeconds}`;
+        updateProgressBar(totalDuration);
     }
-}
-
-function formatInMinuteSeconds(time){
-    let minutes = Math.floor(time/60);
-    let seconds = Math.floor(time%60);
-    // console.log(minutes,seconds)
-    return [minutes,seconds]
 }
 
 window.stateChanged = stateChanged;
+
+// Play and pause Functionality
+
+const playButton = document.querySelector("#jsPlayButton");
 
 playButton.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -153,3 +113,79 @@ playButton.addEventListener("click", (e) => {
         player.playVideo();
     }
 })
+
+let tracking = null;
+
+// song real time duration tracking
+
+function startTimeTracking() {
+    console.log("Time track started")
+    console.log("Tracking ID:", tracking);
+    if(tracking){
+        clearInterval(tracking)
+    }
+    tracking = setInterval(() => {
+        let currentTime = player.getCurrentTime();
+        let totalDuration = player.getDuration();
+        console.log(`${currentTime} / ${totalDuration}`);
+        let [totalMinute, totalSeconds] = formatInMinuteSeconds(totalDuration);
+        updateProgressTime(currentTime, totalMinute, totalSeconds);
+    }, 1000);
+}
+
+function stopTimeTracking() {
+    console.log("Clearing Track interval");
+    clearInterval(tracking);
+}
+
+function formatInMinuteSeconds(time) {
+    let minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time % 60);
+    // console.log(minutes,seconds)
+    return [minutes, seconds]
+}
+
+function updateProgressTime(current, totalMinute, totalSeconds) {
+    console.log("Update Progress time is running");
+    const currentTime = document.querySelector("#jsCurrentTime");
+    const totalDuration = document.querySelector("#jsTotalDuration");
+
+    let [currentMinute, currentSeconds] = formatInMinuteSeconds(current);
+
+    // console.log(`${currentMinute}:${currentSeconds}/${totalMinute}:${totalSeconds}`);
+
+    if (currentSeconds < 10) {
+        console.log("less")
+        currentTime.innerHTML = `${currentMinute}:0${currentSeconds}`;
+    } else {
+        currentTime.innerHTML = `${currentMinute}:${currentSeconds}`;
+        totalDuration.innerHTML = `${totalMinute}:${totalSeconds}`;
+    }
+}
+
+// progress bar sync
+
+const timeLine = document.querySelector("#jsTimelineSlider");
+const progress = document.querySelector("#jsSongProgress");
+let value = 0;
+let updateTime = null;
+
+function updateProgressBar(time) {
+    console.log("Update progress bar");
+    if (updateTime) {
+        clearInterval(updateTime)
+    }
+
+    updateTime = setInterval(() => {
+        let currentTime = player.getCurrentTime();
+        let currentPercentage = (Math.floor(currentTime) / time) * 100;
+        console.log(currentPercentage);
+
+        progress.style.width = `${currentPercentage}%`;
+    }, 50)
+}
+
+function clearProgressInterval() {
+    console.log("Progress Interval cleared");
+    clearInterval(updateTime);
+}
