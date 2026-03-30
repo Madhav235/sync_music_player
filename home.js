@@ -184,7 +184,7 @@ function showUserSelectedSong(CoverUrl,song,artist){
 // search on enter
 
 window.addEventListener("keyup",(e) => {
-    console.log(e.code);
+    // console.log(e.code);
     if (e.code === "Enter"){
         if (searchModal.classList.contains('searchModalActive')){
             searchIcon.click();

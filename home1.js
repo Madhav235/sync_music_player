@@ -1,6 +1,7 @@
 console.log("music player functionality code loaded");
 
 import { YOUTUBE_API_KEY } from "./config.js";
+export let videoId = null;
 
 async function searchYouTube(query) {
     console.log("New")
@@ -22,9 +23,11 @@ export async function playSongOnPLayer(name, artist) {
 
     // Access Video Id
 
-    let videoId = await accessVideoIdFromYoutube(name, artist);
-    console.log(videoId);
-    console.log("I ran first");
+    // videoId = await accessVideoIdFromYoutube(name, artist);
+    // console.log(videoId);
+    // console.log("I ran first");
+
+    videoId = "hM2U8cb8lhI";
 
     // Sending accessed video ID to the iframe
 
@@ -120,14 +123,14 @@ let tracking = null;
 
 function startTimeTracking() {
     console.log("Time track started")
-    console.log("Tracking ID:", tracking);
+    // console.log("Tracking ID:", tracking);
     if(tracking){
         clearInterval(tracking)
     }
     tracking = setInterval(() => {
         let currentTime = player.getCurrentTime();
         let totalDuration = player.getDuration();
-        console.log(`${currentTime} / ${totalDuration}`);
+        // console.log(`${currentTime} / ${totalDuration}`);
         let [totalMinute, totalSeconds] = formatInMinuteSeconds(totalDuration);
         updateProgressTime(currentTime, totalMinute, totalSeconds);
     }, 1000);
@@ -195,7 +198,7 @@ function clearProgressInterval() {
 // play pause song through the space bar
 
 window.addEventListener("keyup",(e) => {
-    console.log(e.code);
+    // console.log(e.code);
     if (e.code === "Space"){
          if (player.getPlayerState() === 2){
             player.playVideo();
