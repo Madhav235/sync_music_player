@@ -128,6 +128,11 @@ searchIcon.addEventListener("click",(e) => {
     console.log("search icon clicked");
     searchData = searchSpotify(`${searchInput.value}`);
 
+    // Refreshing the search modal
+
+    const searchModal = document.querySelector("#jsSearchModal");
+    searchModal.innerHTML = "";
+
     searchData.then(data => {
         console.log(data)
         data.tracks.items.forEach(element => {
@@ -173,3 +178,16 @@ function showUserSelectedSong(CoverUrl,song,artist){
     songName.innerHTML = song;
     songArtist.innerHTML = artist;
 }
+
+// keyboard controls
+
+// search on enter
+
+window.addEventListener("keyup",(e) => {
+    console.log(e.code);
+    if (e.code === "Enter"){
+        if (searchModal.classList.contains('searchModalActive')){
+            searchIcon.click();
+        }
+    }
+})

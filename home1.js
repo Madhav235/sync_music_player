@@ -22,14 +22,14 @@ export async function playSongOnPLayer(name, artist) {
 
     // Access Video Id
 
-    // let videoId = await accessVideoIdFromYoutube(name, artist);
-    // console.log(videoId);
-    // console.log("I ran first");
+    let videoId = await accessVideoIdFromYoutube(name, artist);
+    console.log(videoId);
+    console.log("I ran first");
 
     // Sending accessed video ID to the iframe
 
-    let status = sendingAcessIdToIframe();
-    if (status == "VideoId Invalid") {
+    let status = sendingAcessIdToIframe(videoId);
+    if (status === "VideoId Invalid") {
         console.log("VideoId Invalid")
     }
 }
@@ -54,7 +54,7 @@ async function accessVideoIdFromYoutube(songName, songArtist) {
     return videoId
 }
 
-function sendingAcessIdToIframe(videoId = "hM2U8cb8lhI") {
+function sendingAcessIdToIframe(videoId) {
     if (!videoId) return;
 
     const player = window.YTPlayerState.getPlayer();
@@ -153,13 +153,13 @@ function updateProgressTime(current, totalMinute, totalSeconds) {
     let [currentMinute, currentSeconds] = formatInMinuteSeconds(current);
 
     // console.log(`${currentMinute}:${currentSeconds}/${totalMinute}:${totalSeconds}`);
+    totalDuration.innerHTML = `${totalMinute}:${totalSeconds}`;
 
     if (currentSeconds < 10) {
         console.log("less")
         currentTime.innerHTML = `${currentMinute}:0${currentSeconds}`;
     } else {
         currentTime.innerHTML = `${currentMinute}:${currentSeconds}`;
-        totalDuration.innerHTML = `${totalMinute}:${totalSeconds}`;
     }
 }
 
@@ -189,3 +189,18 @@ function clearProgressInterval() {
     console.log("Progress Interval cleared");
     clearInterval(updateTime);
 }
+
+// keyboard controls
+
+// play pause song through the space bar
+
+window.addEventListener("keyup",(e) => {
+    console.log(e.code);
+    if (e.code === "Space"){
+         if (player.getPlayerState() === 2){
+            player.playVideo();
+         }else{
+            player.pauseVideo();
+         }
+    }
+})
