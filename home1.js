@@ -23,11 +23,11 @@ export async function playSongOnPLayer(name, artist) {
 
     // Access Video Id
 
-    // videoId = await accessVideoIdFromYoutube(name, artist);
-    // console.log(videoId);
-    // console.log("I ran first");
+    videoId = await accessVideoIdFromYoutube(name, artist);
+    console.log(videoId);
+    console.log("I ran first");
 
-    videoId = "hM2U8cb8lhI";
+    // videoId = "hM2U8cb8lhI";
 
     // Sending accessed video ID to the iframe
 

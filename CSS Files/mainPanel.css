@@ -1,4 +1,9 @@
-.mainPanel {
+.mainPanel{
+    display: none;
+}
+
+.mainPanel.active {
+    display: block;
     flex: 1;
     width: 100%;
     height: calc(100vh - 202px);

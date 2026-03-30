@@ -65,3 +65,6 @@ function addToLocalStorage(songData) {
 }
 
 // localStorage.clear();
+
+// rendering data of liked songs into the ui
+
