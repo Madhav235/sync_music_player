@@ -186,7 +186,7 @@ function updateProgressBar(time) {
     updateTime = setInterval(() => {
         let currentTime = player.getCurrentTime();
         let currentPercentage = (Math.floor(currentTime) / time) * 100;
-        console.log(currentPercentage);
+        // console.log(currentPercentage);
 
         progress.style.width = `${currentPercentage}%`;
     }, 50)

@@ -4,23 +4,66 @@ import { playerState } from "./home1.js";
 import { songAlbum } from "./home.js";
 
 // Local storage variable and storing song data in array 
-
 let localStorageData = JSON.parse(localStorage.getItem("likedSongsData")) || [];
+
+
+function updateLikedSongContainer(){
+
+    console.log("Updating Conatiner")
+
+    const likedSongsContainer = document.querySelector("#jsLikedSongsContainer");
+    likedSongsContainer.innerHTML = "";
+    
+    localStorageData = JSON.parse(localStorage.getItem("likedSongsData")) || [];
+    let likedSongContainer = [];
+
+    for (let i = localStorageData.length - 1 ; i >=  0 ; i--){
+        likedSongContainer.push(localStorageData[i])
+    }
+
+    for (let i = 0 ; i < likedSongContainer.length ; i++){
+        let songData = likedSongContainer[i];
+        renderLikedSongItem(songData,i);
+    }
+}
 
 // selecing like button
 
 const likeButton = document.querySelector("#jsLikeButton");
 
+likeButton.addEventListener("click",(e) => {
+    e.stopPropagation();
+    console.log("Like button clicked");
+
+    // check for duplicate Entry
+    let duplicateEntry = false;
+
+    for (let i = 0; i < localStorageData.length; i++) {
+        if (localStorageData[i].songId === playerState.songId) {
+            duplicateEntry = true;
+        }
+    }
+
+    if (!duplicateEntry){
+        let songData = createLikedSongObject();
+        addToLocalStorage(songData);
+        updateLikedSongContainer();
+    }
+})
+
 //  Function to create the liked song object 
 
-function createLikedSongObject(songName,songArtist,songCover,videoId) {
-    // fetching song album from spotify
+function createLikedSongObject() {
 
+    const songName = document.querySelector("#jsSongName");
+    const songArtist = document.querySelector("#jsSongArtist");
+    const songCover = document.querySelector("#jsSongCoverLayoutSource");
+    
     return {
         Song: songName.innerHTML,
         Artist: songArtist.innerHTML,
         coverUrl: songCover.src,
-        songId: videoId,
+        songId: playerState.songId,
         Album: songAlbum
     }
 }
@@ -30,7 +73,6 @@ function addToLocalStorage(songData) {
     // setting to local storage
     localStorageData.push(songData);
     localStorage.setItem("likedSongsData", JSON.stringify(localStorageData));
-    return localStorageData.length;
 }
 
 function renderLikedSongItem(songData,idx) {
@@ -102,7 +144,9 @@ function renderLikedSongItem(songData,idx) {
 
     // Rendering final item to the song container
 
-    const likedSongsContainer = document.querySelectorAll("#jsLikedSongsContainer");
+    const likedSongsContainer = document.querySelector("#jsLikedSongsContainer");
     console.log(likedSongsContainer);
-    likedSongsContainer[0].prepend(likedSongItem);
+    likedSongsContainer.appendChild(likedSongItem);
 }
+
+updateLikedSongContainer();
