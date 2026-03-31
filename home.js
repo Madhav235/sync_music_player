@@ -1,5 +1,8 @@
-import { getSpotifyToken ,api} from "./spotifyToken.js";
+import { searchSpotify } from "./fetchSpotify.js";
 import {playSongOnPLayer} from "./home1.js";
+export {songAlbum}
+
+let songAlbum = null;
 
 // Search bar Functionality
 
@@ -31,33 +34,13 @@ window.addEventListener("click",() => {
     searchModal.innerHTML= "";
 });
 
-// sending user search query to the spotify api
-
-export async function searchSpotify(query) {
-    console.log("Search query started");
-    console.log(query);
-    const token = await getSpotifyToken();
-
-    const response = await fetch(
-        `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track&limit=5`,
-        {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }
-    );
-
-    const data = await response.json();
-    return data;
-}
-
 // data of one search results
 
 let songsData = [];
 
 // Making search modal suggestions dynamically
 
-function createSearchModalSuggestion(song,artist,cover){
+function createSearchModalSuggestion(song,artist,cover,album){
     console.log("Dynamic Modal suggestion creation started");
     console.log(cover);
 
@@ -106,7 +89,8 @@ function createSearchModalSuggestion(song,artist,cover){
             element : searchModalItem,
             songName : songName.innerText,
             songArtist : songArtist.innerText,
-            songCover : cover
+            songCover : cover,
+            songAlbum : album
         }
     );
     // console.log(songsData);
@@ -139,7 +123,8 @@ searchIcon.addEventListener("click",(e) => {
             let songName = element.name;
             let songArtist = element.artists[0].name;
             let songCover = element.album.images[0].url;
-            searchedSongs = createSearchModalSuggestion(songName,songArtist,songCover);
+            let songAlbum = element.album.name;
+            searchedSongs = createSearchModalSuggestion(songName,songArtist,songCover,songAlbum);
         });
 
         // console.log(searchedSongs);
@@ -150,6 +135,7 @@ searchIcon.addEventListener("click",(e) => {
                 console.log(songs);
                 console.log(e);
                 console.log(idx);
+                songAlbum = songs.songAlbum;
                 showUserSelectedSong(songs.songCover,songs.songName,songs.songArtist);
                 playSongOnPLayer(songs.songName,songs.songArtist)
             })
@@ -190,4 +176,4 @@ window.addEventListener("keyup",(e) => {
             searchIcon.click();
         }
     }
-})
+}) 

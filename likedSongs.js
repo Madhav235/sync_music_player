@@ -1,75 +1,41 @@
 console.log("Liked songs js loaded");
 
-import { videoId } from "./home1.js";
+import { playerState } from "./home1.js";
+import { songAlbum } from "./home.js";
 
-// storing song data in array
+// Local storage variable and storing song data in array 
 
-let likedSongsData = [];
+let localStorageData = JSON.parse(localStorage.getItem("likedSongsData")) || [];
 
 // selecing like button
 
 const likeButton = document.querySelector("#jsLikeButton");
 
-likeButton.addEventListener("click", (e) => {
-    e.stopPropagation();
-    console.log("Like button clicked");
-
-    let songData = createLikedSongObject();
-
-    // checking for duplicate data entry
-
-    let duplicateEntry = false;
-
-    for (let i = 0; localStorageData.length; i++) {
-        if (localStorageData[i].videoId === songData.videoId) {
-            duplicateEntry = true;
-        }
-    }
-
-    if (!duplicateEntry) {
-        likedSongsData.push(songData);
-
-        console.log(likedSongsData);
-
-        addToLocalStorage(songData);
-        renderLikedSongsData(songData);
-    }
-})
-
 //  Function to create the liked song object 
 
-function createLikedSongObject() {
-
-    // selecting the assets of the song playing on the time of like
-
-    const songName = document.querySelector("#jsSongName");
-    const songArtist = document.querySelector("#jsSongArtist");
-    const songCover = document.querySelector("#jsSongCoverLayoutSource");
+function createLikedSongObject(songName,songArtist,songCover,videoId) {
+    // fetching song album from spotify
 
     return {
         Song: songName.innerHTML,
         Artist: songArtist.innerHTML,
         coverUrl: songCover.src,
-        songId: videoId
+        songId: videoId,
+        Album: songAlbum
     }
 }
-
-// Local storage variable
-
-let localStorageData = JSON.parse(localStorage.getItem("likedSongsData")) || [];
 
 function addToLocalStorage(songData) {
 
     // setting to local storage
     localStorageData.push(songData);
     localStorage.setItem("likedSongsData", JSON.stringify(localStorageData));
+    return localStorageData.length;
 }
 
-localStorage.clear();
+function renderLikedSongItem(songData,idx) {
 
-// Rendering liked songs data on the ui
-
-function renderLikedSongsData(songData) {
+    console.log("Liked song rendering started");
 
     // Dynamically creating the item component
 
@@ -131,9 +97,12 @@ function renderLikedSongsData(songData) {
     likedSongName.innerHTML = songData.Song;
     likedSongArtist.innerHTML = songData.Artist;
     likedSongCoverSource.setAttribute("src", songData.coverUrl);
+    likedSongAlbum.innerHTML = songData.Album;
+    serialNumber.innerHTML = `${idx+1}.`;
 
     // Rendering final item to the song container
 
-    const likedSongsContainer = document.querySelector("#jsLikedSongsContainer");
-    likedSongsContainer.appendChild(likedSongItem);
+    const likedSongsContainer = document.querySelectorAll("#jsLikedSongsContainer");
+    console.log(likedSongsContainer);
+    likedSongsContainer[0].prepend(likedSongItem);
 }

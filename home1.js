@@ -1,7 +1,10 @@
 console.log("music player functionality code loaded");
 
 import { YOUTUBE_API_KEY } from "./config.js";
-export let videoId = null;
+export 
+    let playerState = {
+        songId : null
+    }
 
 async function searchYouTube(query) {
     console.log("New")
@@ -23,7 +26,7 @@ export async function playSongOnPLayer(name, artist) {
 
     // Access Video Id
 
-    videoId = await accessVideoIdFromYoutube(name, artist);
+    let videoId = await accessVideoIdFromYoutube(name, artist);
     console.log(videoId);
     console.log("I ran first");
 
@@ -50,6 +53,7 @@ async function accessVideoIdFromYoutube(songName, songArtist) {
     for (let item of data.items) {
         if (item.id && item.id.videoId) {
             videoId = item.id.videoId;
+            playerState.songId = videoId
             break;
         }
     }
