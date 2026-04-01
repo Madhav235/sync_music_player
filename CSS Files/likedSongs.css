@@ -180,6 +180,12 @@
     height: 70%;
     /* background-color: red; */
     padding: var(--padding-md);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.likedSongsContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .likedSongsContainer .likedSongItem{
@@ -210,6 +216,10 @@
     transition: all 0.2s ease;
 }
 
+.likedSongsContainer .likedSongItem:hover{
+    opacity: 0.65;
+}
+
 .likedSongsContainer .likedSongItem .serialNumber{
     width: 30px;
     height: 30px;
@@ -220,7 +230,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .likedSongsContainer .likedSongItem .likedSongCover{
@@ -273,7 +283,7 @@
 }
 
 .likedSongsContainer .likedSongItem .likedSongInfo{
-    width: 30%;
+    width: 27%;
     height: 100%;
     /* background-color: red; */
     display: flex;
@@ -309,7 +319,7 @@
 }
 
 .likedSongDescription .likedSongAlbum{
-    width: 25%;
+    width: 28%;
     height: 100%;
     /* background-color: black; */
     font-family: var(--font);

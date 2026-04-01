@@ -2,10 +2,15 @@ console.log("Liked songs js loaded");
 
 import { playerState } from "./home1.js";
 import { songAlbum } from "./home.js";
+import { playSongOnPLayer } from "./home1.js";
+import {showUserSelectedSong} from "./home.js";
+import { formatInMinuteSeconds } from "./home1.js";
 
 // Local storage variable and storing song data in array 
 let localStorageData = JSON.parse(localStorage.getItem("likedSongsData")) || [];
+let likedSongContainer = []
 
+// updating liked songs container
 
 function updateLikedSongContainer(){
 
@@ -15,7 +20,7 @@ function updateLikedSongContainer(){
     likedSongsContainer.innerHTML = "";
     
     localStorageData = JSON.parse(localStorage.getItem("likedSongsData")) || [];
-    let likedSongContainer = [];
+    likedSongContainer = [];
 
     for (let i = localStorageData.length - 1 ; i >=  0 ; i--){
         likedSongContainer.push(localStorageData[i])
@@ -25,9 +30,11 @@ function updateLikedSongContainer(){
         let songData = likedSongContainer[i];
         renderLikedSongItem(songData,i);
     }
+ 
+    addEventToAllLikedSongs();
 }
 
-// selecing like button
+// selecting like button
 
 const likeButton = document.querySelector("#jsLikeButton");
 
@@ -46,6 +53,8 @@ likeButton.addEventListener("click",(e) => {
 
     if (!duplicateEntry){
         let songData = createLikedSongObject();
+        getAdditionDate(songData);
+        setTotalDuration(songData);
         addToLocalStorage(songData);
         updateLikedSongContainer();
     }
@@ -68,12 +77,82 @@ function createLikedSongObject() {
     }
 }
 
+// get the date when the song added
+
+function getAdditionDate(data){
+    console.log("add time started")
+
+    let date = new Date();
+    console.log(date);
+
+    let day = date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+
+    let monthFinal = null;
+
+    switch (month){
+        case 0:
+            monthFinal = "Jan"
+            break;
+           case 1:
+            monthFinal = "Feb"
+            break;
+           case 2:
+            monthFinal = "Mar"
+            break;
+           case 3:
+            monthFinal = "Apr"
+            break;
+           case 4:
+            monthFinal = "May"
+            break;
+           case 5:
+            monthFinal = "Jun"
+            break;
+           case 6:
+            monthFinal = "Jul"
+            break;
+           case 7:
+            monthFinal = "Aug"
+            break;
+           case 8:
+            monthFinal = "Sep"
+            break;
+           case 9:
+            monthFinal = "Oct"
+            break;
+           case 10:
+            monthFinal = "Nov"
+            break;
+           case 11:
+            monthFinal = "Dec"
+            break;
+    }
+
+    let addDate = `${day} ${monthFinal} ${year}`;
+    data.addDate = addDate;
+}
+
+// get total duration
+
+function setTotalDuration(data){
+    let duration = player.getDuration();
+    let [minutes,seconds] = formatInMinuteSeconds(duration);
+    let songDuration = `${minutes}:${seconds}`;
+    data.Duration = songDuration;
+}
+
+// adding to Local Storage
+
 function addToLocalStorage(songData) {
 
     // setting to local storage
     localStorageData.push(songData);
     localStorage.setItem("likedSongsData", JSON.stringify(localStorageData));
 }
+
+// rendering new songs
 
 function renderLikedSongItem(songData,idx) {
 
@@ -141,12 +220,28 @@ function renderLikedSongItem(songData,idx) {
     likedSongCoverSource.setAttribute("src", songData.coverUrl);
     likedSongAlbum.innerHTML = songData.Album;
     serialNumber.innerHTML = `${idx+1}.`;
+    likedSongDateAdded.innerHTML = `${songData.addDate}`;
+    likedSongDuration.innerHTML = `${songData.Duration}`;
 
     // Rendering final item to the song container
 
     const likedSongsContainer = document.querySelector("#jsLikedSongsContainer");
     console.log(likedSongsContainer);
+    songData.element = likedSongItem;
     likedSongsContainer.appendChild(likedSongItem);
 }
 
 updateLikedSongContainer();
+
+// playing the selected liked song on the player
+
+function addEventToAllLikedSongs(){
+    likedSongContainer.forEach(item => {
+        item.element.addEventListener("click",(e) => {
+            e.stopPropagation();
+            let videoId = item.songId;
+            showUserSelectedSong(item.coverUrl,item.Song,item.Artist);
+            playSongOnPLayer(null,null,videoId);
+        });
+    });
+}
