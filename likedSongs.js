@@ -1,10 +1,10 @@
 console.log("Liked songs js loaded");
 
-import { playerState } from "./home1.js";
-import { songAlbum } from "./home.js";
-import { playSongOnPLayer } from "./home1.js";
-import { showUserSelectedSong } from "./home.js";
-import { formatInMinuteSeconds } from "./home1.js";
+import { playerState } from "/home1.js";
+import { songAlbum } from "/home.js";
+import { playSongOnPLayer } from "/home1.js";
+import { showUserSelectedSong } from "/home.js";
+import { formatInMinuteSeconds } from "/home1.js";
 
 // Local storage variable and storing song data in array
 let localStorageData = JSON.parse(localStorage.getItem("likedSongsData")) || [];
