@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="middle">
-                <div class="homeButton">
+                <div id="jsHomeButton" class="homeButton">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" id="home-btn"
                         class="size-6">
                         <path
@@ -134,13 +134,22 @@
                                 </svg></div>
                         </div>
                     </div>
-                    <div class="playlistItem">
-                        <div class="playlistProfile"></div>
-                        <div class="playlistDescription"></div>
+                    <div id="jsLikedSongsItem" class="playlistItem">
+                        <div class="playlistProfile">
+                            <div class="playlistProfileLayout">
+                                <img src="https://misc.scdn.co/liked-songs/liked-songs-300.jpg">
+                            </div>
+                        </div>
+                        <div class="playlistDescription">
+                            <div class="playlistName">Liked Songs</div>
+                            <div class="playlistType">
+                                <div class="typeName"><span>Playlist&nbsp;</span><span>&bull; 960 songs</span></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="mainPanel">
+            <div id="jsMainPanel" class="mainPanel active">
                 <div class="userName"><span style="color: var(--color-text-secondary);">Good Evening,&nbsp</span><span
                         style="color: var(--color-primary);">Madhav</span></div>
                 <div class="quickSuggestion">
@@ -249,7 +258,7 @@
                 <div class="newReleases panelItem"></div>
                 <div class="jumpBackIn panelItem"></div> -->
             </div>
-            <div class="likedSongs active">
+            <div id="jsLikedSongs" class="likedSongs">
                 <div class="likedSongsHeader">
                     <div class="likedSongsIcon">
                         <div class="likedSongsIconSource">
