@@ -241,27 +241,3 @@ function addEventToAllLikedSongs() {
     });
   });
 }
-
-// opening liked songs page on clicking the liked songs
-
-const likedSongItem = document.querySelector("#jsLikedSongsItem");
-
-likedSongItem.addEventListener("click", (e) => {
-  e.stopPropagation();
-  console.log("item clicked");
-  const likedSong = document.querySelector("#jsLikedSongs");
-  likedSong.classList.add("active");
-
-  const mainPanel = document.querySelector("#jsMainPanel");
-  mainPanel.classList.remove("active");
-});
-
-const homeButton = document.querySelector("#jsHomeButton");
-
-homeButton.addEventListener("click", (e) => {
-  const likedSong = document.querySelector("#jsLikedSongs");
-  likedSong.classList.remove("active");
-
-  const mainPanel = document.querySelector("#jsMainPanel");
-  mainPanel.classList.add("active");
-});
