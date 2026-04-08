@@ -256,4 +256,12 @@ likedSongItem.addEventListener("click", (e) => {
   mainPanel.classList.remove("active");
 });
 
-const hom
+const homeButton = document.querySelector("#jsHomeButton");
+
+homeButton.addEventListener("click", (e) => {
+  const likedSong = document.querySelector("#jsLikedSongs");
+  likedSong.classList.remove("active");
+
+  const mainPanel = document.querySelector("#jsMainPanel");
+  mainPanel.classList.add("active");
+});
