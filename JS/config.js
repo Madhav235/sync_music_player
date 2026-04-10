@@ -1,0 +1,6 @@
+window.CONFIG = {
+  CLIENT_ID: "2efb7070cba9430cbee350bd29682603",
+  CLIENT_SECRET: "69e88e45ca454b29ad1b649ea88c119d",
+  YOUTUBE_API_KEY : "AIzaSyAkHBHJlCf5eNnFvHIbuGgyz3odHvXHRmQ"
+};
+

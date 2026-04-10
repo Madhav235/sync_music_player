@@ -20,7 +20,8 @@ window.onYouTubeIframeAPIReady = function () {
         width: "0",
         playerVars: {
             autoplay: 1,
-            controls: 0
+            controls: 0,
+            origin: window.location.origin
         },
         events: {
             onReady: function () {
