@@ -1,0 +1,1 @@
+let myGlobalVar = 42;

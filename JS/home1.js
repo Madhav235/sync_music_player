@@ -97,8 +97,7 @@ let stateChanged = function (state) {
   } else if (state === 1 || state === 3) {
     playButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" id="pause-btn" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause-icon lucide-pause"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>`;
     startTimeTracking();
-    let totalDuration = player.getDuration();
-    updateProgressBar(totalDuration);
+    updateProgressBar();
   }
 };
 
@@ -180,7 +179,7 @@ const progress = document.querySelector("#jsSongProgress");
 let value = 0;
 let updateTime = null;
 
-function updateProgressBar(time) {
+function updateProgressBar() {
   console.log("Update progress bar");
   if (updateTime) {
     clearInterval(updateTime);
@@ -188,12 +187,26 @@ function updateProgressBar(time) {
 
   updateTime = setInterval(() => {
     let currentTime = player.getCurrentTime();
-    let currentPercentage = (Math.floor(currentTime) / time) * 100;
-    // console.log(currentPercentage);
-
-    progress.style.width = `${currentPercentage}%`;
+    let currentDuration = player.getDuration();
+    
+    if (currentDuration > 0) {
+      let currentPercentage = (currentTime / currentDuration) * 100;
+      progress.style.width = `${currentPercentage}%`;
+    }
   }, 50);
 }
+
+// Click to seek forward and backward in the song
+timeLine.addEventListener("click", (e) => {
+  if (player && player.getDuration() > 0) {
+    let width = timeLine.clientWidth;
+    let clickX = e.offsetX;
+    let duration = player.getDuration();
+    
+    let newTime = (clickX / width) * duration;
+    player.seekTo(newTime, true);
+  }
+});
 
 function clearProgressInterval() {
   console.log("Progress Interval cleared");
