@@ -4,10 +4,10 @@
 
 .search-Modal.searchModalActive{
     width: 33%;
-    height: 470px;
+    height: 365px;
     background-color: yellow;
     position: fixed;
-    top: 85px;
+    top: 70px;
     left: 52%;
     translate: -50%;
     background: var(--color-surface);
@@ -54,7 +54,7 @@
     transition: all 0.2s ease;
     padding: 8px 15px;
     display: flex;
-    gap: var(--gutter-md);
+    gap: var(--gutter-sm);
 }
 
 .search-Modal.searchModalActive .searchModalItem:hover{
@@ -110,6 +110,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: -5px;
 }
 
 .search-Modal .songInformation .songName{
@@ -120,7 +121,7 @@
     justify-content: flex-start;
     align-items: flex-end;
     font-family: var(--font);
-    font-size:  20px;
+    font-size:  16px;
     font-weight: 500;
     color: var(--color-text);
 }
@@ -134,5 +135,5 @@
     align-items: flex-start;
     font-family: var(--font);
     color: var(--color-text-secondary);
-    font-size: 16px;
+    font-size: 12px;
 }

@@ -2,9 +2,9 @@
     width: 100%;
     height: calc(100vh - 185px);
     display: flex;
-    gap: var(--gutter-md);
-    padding-left: var(--padding-md);
-    padding-right: var(--padding-md);
+    gap: 0.75rem;
+    padding-left: var(--padding-sm);
+    padding-right: var(--padding-sm);
     /* background-color: red; */
     /* background: var(--color-surface);;
 

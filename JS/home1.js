@@ -204,19 +204,19 @@ function clearProgressInterval() {
 
 // play pause song through the space bar
 
-window.addEventListener("keyup", (e) => {
-  console.log(e.code);
+window.addEventListener("keydown", (e) => {
+  // avoiding play when search bar is open 
+  const searchModal = document.querySelector("#jsSearchModal");
+  const isModalOpen = searchModal && searchModal.classList.contains("searchModalActive");
 
- // avoiding play when search bar is open 
- const searchModal = document.querySelector("#jsSearchModal");
+  if (isModalOpen) return;
 
- if (!(searchModal.includes(searchModalActive))){
-   if (e.code === "Space") {
-    if (player.getPlayerState() === 2) {
+  if (e.code === "Space") {
+    e.preventDefault(); // Prevent page scroll when pausing/playing
+    if (player && player.getPlayerState() === 2) {
       player.playVideo();
-    } else {
+    } else if (player) {
       player.pauseVideo();
     }
   }
- }
 });

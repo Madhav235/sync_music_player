@@ -6,8 +6,8 @@
     display: block;
     flex: 1;
     width: 100%;
-    height: calc(100vh - 202px);
-    /* background-color: red; */
+    height: calc(100vh - 158px);
+    background-color: red;
     background: var(--color-surface);
 
     backdrop-filter: blur(8px);
@@ -24,8 +24,8 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
 
     color: var(--color-surface);
-    padding-left: var(--padding-2xl);
-    padding-right: var(--padding-2xl);
+    padding-left: var(--padding-xl);
+    padding-right: var(--padding-xl);
     transition: all 0.25s ease;
 }
 
@@ -35,7 +35,7 @@
     /* background-color: red; */
     font-family: var(--font);
     color: var(--color-text);
-    font-size: 35px;
+    font-size: 26px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -190,7 +190,7 @@
     gap: var(--gutter-sm);
     font-family: var(--font);
     color: var(--color-text-secondary);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 550;
 }
 
@@ -222,7 +222,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 700;
 }
 
