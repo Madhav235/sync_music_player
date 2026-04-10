@@ -1,6 +1,5 @@
 console.log("music player functionality code loaded");
-
-import { YOUTUBE_API_KEY } from "/config.js";
+YOUTUBE_API_KEY = window.YOUTUBE_API_KEY
 export let playerState = {
   songId: null,
 };

@@ -1,5 +1,6 @@
 console.log("Hey there")
-import { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } from "/config.js";
+const SPOTIFY_CLIENT_ID = window.CONFIG.CLIENT_ID;
+const SPOTIFY_CLIENT_SECRET = window.CONFIG.CLIENT_SECRET;
 
 let accessToken = null;
 let tokenExpiry = 0;
