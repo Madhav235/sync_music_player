@@ -1,330 +1,327 @@
 .musicPlayer {
-    margin-top: 43px;
-    width: 100%;
-    height: 75px;
-    /* background-color: red; */
-    display: flex;
-    align-items: center;
-    padding-left: var(--padding-md);
-    padding-right: var(--padding-md);
+  margin-top: 43px;
+  width: 100%;
+  height: 75px;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  padding-left: var(--padding-md);
+  padding-right: var(--padding-md);
 }
 
 .musicInfo {
-    width: 27%;
-    height: 90%;
-    /* background-color: blue; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: var(--gutter-md);
-    padding-right: var(--padding-sm);
+  width: 27%;
+  height: 90%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--gutter-md);
+  padding-right: var(--padding-sm);
 }
 
 .musicPlayer .musicInfo .songCover {
-    height: 90%;
-    aspect-ratio: 1/1;
-    /* background-color: red; */
-    border-radius: var(--border-radius-lg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-surface);
-    box-shadow:
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 2px 3px rgba(255, 255, 255, 0.08),
-        inset 0 -3px 5px rgba(0, 0, 0, 0.7);
-
+  height: 90%;
+  aspect-ratio: 1/1;
+  /* background-color: red; */
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-surface);
+  box-shadow:
+    0 6px 12px rgba(0, 0, 0, 0.5),
+    inset 0 2px 3px rgba(255, 255, 255, 0.08),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.7);
 }
 
 .musicPlayer .musicInfo .songCover .songCoverLayout {
-    width: 86%;
-    height: 86%;
-    /* background-color: yellow; */
-    border-radius: var(--border-radius-lg);
+  width: 86%;
+  height: 86%;
+  /* background-color: yellow; */
+  border-radius: var(--border-radius-lg);
 }
 
 .musicPlayer .musicInfo .songCover .songCoverLayout img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--border-radius-lg);
-    object-position: bottom;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+  object-position: bottom;
 }
 
 .musicPlayer .musicInfo .songDescription {
-    width: 100%;
-    height: 90%;
-    /* background-color: yellow; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 100%;
+  height: 90%;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .musicPlayer .musicInfo .songDescription .songName {
-    width: 100%;
-    height: 49.5%;
-    /* background-color: aqua; */
-    font-family: var(--font);
-    font-size: 16px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    color: var(--color-text);
+  width: 100%;
+  height: 49.5%;
+  /* background-color: aqua; */
+  font-family: var(--font);
+  font-size: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  color: var(--color-text);
 }
 
 .musicPlayer .musicInfo .songDescription .songArtist {
-    width: 100%;
-    height: 49.5%;
-    /* background-color: aqua; */
-    font-family: var(--font);
-    font-size: 14px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    color: var(--color-text-secondary);
+  width: 100%;
+  height: 49.5%;
+  /* background-color: aqua; */
+  font-family: var(--font);
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: var(--color-text-secondary);
 }
 
 .mainPlayer {
-    width: 46%;
-    height: 90%;
-    /* background-color: black; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  width: 46%;
+  height: 90%;
+  /* background-color: black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .mainPlayer .songFunctions {
-    width: 70%;
-    height: 57%;
-    /* background-color: aqua; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--gutter-xl);
+  width: 70%;
+  height: 57%;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gutter-xl);
 }
 
 .mainPlayer .songFunctions .play {
-    width: 42px;
-    height: 42px;
-    background-color: var(--color-primary);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--color-primary);
+  width: 42px;
+  height: 42px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-primary);
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.5),
-        inset 0 1px 1px rgba(255, 255, 255, 0.15),
-        /* ↑ more visible highlight */
-        inset 0 -1px 1px rgba(0, 0, 0, 0.4);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15),
+    /* ↑ more visible highlight */ inset 0 -1px 1px rgba(0, 0, 0, 0.4);
 
-    border: 1px solid rgba(123, 97, 255, 0.35);
-    /* colored border */
+  border: 1px solid rgba(123, 97, 255, 0.35);
+  /* colored border */
 
-    transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 #play-btn {
-    width: 22px;
-    height: 22px;
-    color: var(--color-text);
+  width: 22px;
+  height: 22px;
+  color: var(--color-text);
 }
 
-#pause-btn{
-    width: 22px;
-    height: 22px;
-    color: var(--color-text);
+#pause-btn {
+  width: 22px;
+  height: 22px;
+  color: var(--color-text);
 }
 
-.mainPlayer .songFunctions .play:hover{
-    transform: scale(1.05);
-    cursor: pointer;
+.mainPlayer .songFunctions .play:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .mainPlayer .songFunctions .nav {
-    width: 50px;
-    height: 50px;
-    /* background-color: orange; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 50px;
+  height: 50px;
+  /* background-color: orange; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mainPlayer .songFunctions .navigate-btn {
-    width: 25px;
-    height: 25px;
-    color: var(--color-text-secondary);
-    transition: all 0.2s ease;
+  width: 25px;
+  height: 25px;
+  color: var(--color-text-secondary);
+  transition: all 0.2s ease;
 }
 
-.mainPlayer .songFunctions .nav:hover{
-    cursor: pointer;
+.mainPlayer .songFunctions .nav:hover {
+  cursor: pointer;
 }
 
-.mainPlayer .songFunctions .nav:hover .navigate-btn{
-    color: var(--color-text);
-    transform: scale(1.05);
+.mainPlayer .songFunctions .nav:hover .navigate-btn {
+  color: var(--color-text);
+  transform: scale(1.05);
 }
 
 .mainPlayer .songTimeline {
-    width: 100%;
-    height: 40%;
-    /* background-color: aqua; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--gutter-sm);
+  width: 100%;
+  height: 40%;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gutter-sm);
 }
 
 .mainPlayer .songTimeline .timelineSlider {
-    width: 70%;
-    height: 24%;
-    background-color: var(--color-text-secondary);
-    border-radius: var(--border-radius-2xl);
-    background: var(--color-surface);
+  width: 70%;
+  height: 24%;
+  background-color: var(--color-text-secondary);
+  border-radius: var(--border-radius-2xl);
+  background: var(--color-surface);
 
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
-    box-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
-    border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 
-    color: #eaeaea;
+  color: #eaeaea;
 
-    transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .mainPlayer .songTimeline .progressBar {
-    width: 0%;
-    height: 100%;
-    background-color: var(--color-text);
-    border-radius: var(--border-radius-2xl);
-    transition: all 0.2s ease;
+  width: 0%;
+  height: 100%;
+  background-color: var(--color-text);
+  border-radius: var(--border-radius-2xl);
+  transition: all 0.2s ease;
 }
 
-.mainPlayer .songTimeline .timelineSlider:hover{
-    cursor: pointer;
+.mainPlayer .songTimeline .timelineSlider:hover {
+  cursor: pointer;
 }
 
-.mainPlayer .songTimeline .timelineSlider:hover .progressBar{
-    background-color: var(--color-primary);
+.mainPlayer .songTimeline .timelineSlider:hover .progressBar {
+  background-color: var(--color-primary);
 }
-
 
 .mainPlayer .songTimeline .time {
-    width: 7%;
-    height: 95%;
-    /* background-color: orange; */
-    font-family: var(--font);
-    font-size: 14px;
-    color: var(--color-text-secondary);
+  width: 7%;
+  height: 95%;
+  /* background-color: orange; */
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--color-text-secondary);
 }
 
 .mainPlayer .songTimeline .currentTime {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .mainPlayer .songTimeline .totalTime {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .musicFunctions {
-    width: 27%;
-    height: 95%;
-    /* background-color: blue; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: var(--gutter-sm);
+  width: 27%;
+  height: 95%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--gutter-sm);
 }
 
 .musicFunctions .m {
-    width: 35px;
-    height: 35px;
-    /* background-color: orange; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 35px;
+  height: 35px;
+  /* background-color: orange; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.musicFunctions .m .function-icon{
-    width: 22px;
-    height: 22px;
-    color: var(--color-text-secondary);
-    transition: all 0.15s ease-in-out;
+.musicFunctions .m .function-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-text-secondary);
+  transition: all 0.15s ease-in-out;
 }
 
-.musicFunctions .m:hover .function-icon{
-    color: var(--color-text);
-    cursor: pointer;
-    transform: scale(1.05);
+.musicFunctions .m:hover .function-icon {
+  color: var(--color-text);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
-.musicFunctions .like .function-icon{
-    color: var(--color-primary);
-    fill: var(--color-primary);
+.musicFunctions .like .function-icon {
+  color: var(--color-primary);
+  fill: var(--color-primary);
 }
 
-.musicFunctions .like .function-icon{
-    transition: all 0.15s ease-in-out;
+.musicFunctions .like .function-icon {
+  transition: all 0.15s ease-in-out;
 }
 
-.musicFunctions .like:hover .function-icon{
-    color: var(--color-primary);
-    fill: var(--color-primary);
-    cursor: pointer;
-    transform: scale(1.05);
+.musicFunctions .like:hover .function-icon {
+  color: var(--color-primary);
+  fill: var(--color-primary);
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .musicFunctions .volumeSlider {
-    width: 125px;
-    height: 8px;
-    background-color: var(--color-text-secondary);
-    border-radius: var(--border-radius-2xl);
-    background: var(--color-surface);
+  width: 125px;
+  height: 8px;
+  background-color: var(--color-text-secondary);
+  border-radius: var(--border-radius-2xl);
+  background: var(--color-surface);
 
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
-    box-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.5),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 
-    border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 
-    color: #eaeaea;
+  color: #eaeaea;
 
-    transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.musicFunctions .volumeSlider .currentVolume{
-    width: 80%;
-    height: 100%;
-    background-color: var(--color-text);
-    border-radius: var(--border-radius-2xl);
-    transition: all 0.2s ease;
+.musicFunctions .volumeSlider .currentVolume {
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-text);
+  border-radius: var(--border-radius-2xl);
+  transition: all 0.2s ease;
 }
 
-.musicFunctions .volumeSlider:hover{
-    cursor: pointer;
+.musicFunctions .volumeSlider:hover {
+  cursor: pointer;
 }
 
-.musicFunctions .volumeSlider:hover .currentVolume{
-    background-color: var(--color-primary);
+.musicFunctions .volumeSlider:hover .currentVolume {
+  background-color: var(--color-primary);
 }
 
-#jsYoutubeAudioPlayer{
-    /* position: absolute; */
+#jsYoutubeAudioPlayer {
+  /* position: absolute; */
 }
