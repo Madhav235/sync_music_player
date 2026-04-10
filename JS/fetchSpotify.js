@@ -1,4 +1,4 @@
-import { getSpotifyToken ,api} from "/spotifyToken.js";
+import { getSpotifyToken,api } from "./spotifyToken";
 export {spotifyData}
 
 // sending user search query to the spotify api

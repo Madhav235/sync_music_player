@@ -1,5 +1,5 @@
-import { searchSpotify } from "/fetchSpotify.js";
-import { playSongOnPLayer } from "/home1.js";
+import { searchSpotify } from "./fetchSpotify.js";
+import { playSongOnPLayer } from "./home1.js";
 export { songAlbum };
 
 let songAlbum = null;
