@@ -1,8 +1,8 @@
-.search-Modal{
+.search-Modal {
     display: none;
 }
 
-.search-Modal.searchModalActive{
+.search-Modal.searchModalActive {
     width: 33%;
     height: 365px;
     background-color: yellow;
@@ -31,9 +31,11 @@
     display: flex;
     flex-direction: column;
     gap: var(--gutter-sm);
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
-.search-Modal.searchModalActive .searchModalItem{
+.search-Modal.searchModalActive .searchModalItem {
     width: 100%;
     height: 20%;
     background-color: red;
@@ -57,16 +59,16 @@
     gap: var(--gutter-sm);
 }
 
-.search-Modal.searchModalActive .searchModalItem:hover{
+.search-Modal.searchModalActive .searchModalItem:hover {
     cursor: pointer;
     opacity: 0.75;
 }
 
-.search-Modal .songCover{
+.search-Modal .songCover {
     height: 100%;
     aspect-ratio: 1;
     background-color: yellow;
-     background: var(--color-surface);
+    background: var(--color-surface);
 
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -87,14 +89,14 @@
     align-items: center;
 }
 
-.search-Modal .songCover .songCoverLayout{
+.search-Modal .songCover .songCoverLayout {
     width: 86%;
     height: 86%;
     border-radius: var(--border-radius-lg);
     /* background-color: red; */
 }
 
-.search-Modal .songCover .songCoverLayout img{
+.search-Modal .songCover .songCoverLayout img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -102,7 +104,7 @@
     object-position: bottom;
 }
 
-.search-Modal .songInformation{
+.search-Modal .songInformation {
     flex: 1;
     width: 100%;
     height: 100%;
@@ -113,7 +115,7 @@
     margin-top: -5px;
 }
 
-.search-Modal .songInformation .songName{
+.search-Modal .songInformation .songName {
     width: 100%;
     height: 60%;
     /* background-color: aqua; */
@@ -121,12 +123,12 @@
     justify-content: flex-start;
     align-items: flex-end;
     font-family: var(--font);
-    font-size:  16px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--color-text);
 }
 
-.search-Modal .songInformation .songArtist{
+.search-Modal .songInformation .songArtist {
     width: 100%;
     height: 39.5%;
     /* background-color: blue; */
